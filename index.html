@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mech Arena Tools</title>
+
   <style>
     * {
       margin: 0;
@@ -14,14 +15,16 @@
 
     body, html {
       height: 100%;
-      overflow-x: hidden; overflow-y: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
       scroll-behavior: smooth;
     }
 
+    /* FIRST SECTION — now using your GIF */
     .hero {
       height: 100vh;
       width: 100%;
-      background-image: url('https://plarium.com/wp-content/uploads/2024/11/open_graph_game_re-1.webp');
+      background-image: url('your-image.gif'); /* <-- replace with your GIF filename */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -31,48 +34,12 @@
       align-items: flex-end;
     }
 
-    .arrow { position: absolute; bottom: 30px; cursor: pointer; display:flex; flex-direction:column; align-items:center; gap:4px; }
-.chevron {
-  width: 60px;
-  height: 30px;
-  border-bottom: 8px solid yellow;
-  border-right: 8px solid yellow;
-  transform: rotate(45deg);
-  filter: drop-shadow(0 0 8px yellow);
-}
-
-@keyframes ring {
-  0% { transform: scale(0.5); opacity: 1; }
-  80% { opacity: 0.3; }
-  100% { transform: scale(3.5); opacity: 0; }
-}
-  70% { opacity: 0.4; }
-  100% { transform: scale(3); opacity: 0; }
-}
-
-.ring {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
-  border: 6px solid yellow;
-  border-radius: 50%;
-  animation: ring 1.4s ease-out infinite;
-  opacity: 0.8;
-}
-
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.3; }
-      100% { opacity: 1; }
-    }
-
     .content {
       height: 100vh;
       width: 100%;
-      background-image: url('https://cdnb.artstation.com/p/assets/images/images/041/237/191/4k/plarium-ukraine-11.jpg?16311331554'); background-size: cover; background-position: center;
+      background-image: url('https://cdnb.artstation.com/p/assets/images/images/041/237/191/4k/plarium-ukraine-11.jpg?16311331554');
+      background-size: cover;
+      background-position: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -98,15 +65,11 @@
     }
   </style>
 </head>
+
 <body>
 
   <section class="hero">
-    <div class="arrow" id="arrow">
-  <div class="chevron"></div>
-  <div class="chevron"></div>
-  <div class="chevron"></div>
-  <div class="ring"></div>
-</div>
+    <!-- Arrows removed entirely -->
   </section>
 
   <section class="content" id="content">
@@ -120,15 +83,11 @@
   </section>
 
   <script>
-    const arrow = document.getElementById('arrow');
-    const content = document.getElementById('content');
+    const content = document.getElementById("content");
 
-    document.addEventListener('click', () => {
-  content.scrollIntoView({ behavior: 'smooth' });
-});
-
-    arrow.addEventListener('click', () => {
-      content.scrollIntoView({ behavior: 'smooth' });
+    // Clicking anywhere scrolls down
+    document.addEventListener("click", () => {
+      content.scrollIntoView({ behavior: "smooth" });
     });
   </script>
 
